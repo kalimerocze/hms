@@ -1,0 +1,5 @@
+Wamp
+subline text IDE
+
+db MYSQL
+6
