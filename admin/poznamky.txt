@@ -2,4 +2,7 @@ Wamp
 subline text IDE
 
 db MYSQL
-6
+10
+
+https://www.youtube.com/watch?v=EH7M5L5Ru4A&list=PLp52R89Bo0HSdppcbicaeTk5ifTt6fTPW&index=6
+
