@@ -36,14 +36,29 @@ echo '
 ';
 
 
+}else if(isset($_SESSION['doctor'])){
+	$user = $_SESSION['doctor'];
+	echo '
+	
+		<li class="nav-item">
+			<a href="" class="nav-link">'.$user.'</a>
+		</li>
+		<li class="nav-item">
+			<a href="logout.php" class="nav-link">Logout</a>
+		</li>
+	';
+	
 }
 else{
 echo '
+<li class="nav-item">
+		<a href="index.php" class="nav-link">Home</a>
+	</li>
 	<li class="nav-item">
 		<a href="adminlogin.php" class="nav-link">Admin</a>
 	</li>
 	<li class="nav-item">
-		<a href="" class="nav-link">Doctor</a>
+		<a href="doctorlogin.php" class="nav-link">Doctor</a>
 	</li>
 	<li class="nav-item">
 		<a href="" class="nav-link">Patient</a>
