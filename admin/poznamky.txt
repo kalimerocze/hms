@@ -2,7 +2,48 @@ Wamp
 subline text IDE
 
 db MYSQL
-10
+16
 
 https://www.youtube.com/watch?v=EH7M5L5Ru4A&list=PLp52R89Bo0HSdppcbicaeTk5ifTt6fTPW&index=6
 
+new table ---
+doctors
+ID int 100 AI
+firstname varchar 100
+surname varchar 100
+username varchar 100
+email varchar 100
+gender varchar 100
+phone varchar 100 
+country varchar 100
+password varchar 100
+salary varchar 100
+data_reg varchar 100
+status varchar 100
+profile varchar 100
+
+
+new table ---
+patient
+ID int 100 AI
+firstname varchar 100
+surname varchar 100
+username varchar 100
+email varchar 100
+phone varchar 100 
+gender varchar 100
+country varchar 100
+password varchar 100
+
+data_reg varchar 100
+
+profile varchar 100
+
+
+new table ---
+report
+id  int 100 AI Primary
+title varchar 100
+message varchar 100
+username varchar 100
+date_send varchar 100

@@ -48,6 +48,18 @@ echo '
 		</li>
 	';
 	
+}else if(isset($_SESSION['patient'])){
+	$user = $_SESSION['patient'];
+	echo '
+	
+		<li class="nav-item">
+			<a href="" class="nav-link">'.$user.'</a>
+		</li>
+		<li class="nav-item">
+			<a href="logout.php" class="nav-link">Logout</a>
+		</li>
+	';
+	
 }
 else{
 echo '
@@ -61,7 +73,7 @@ echo '
 		<a href="doctorlogin.php" class="nav-link">Doctor</a>
 	</li>
 	<li class="nav-item">
-		<a href="" class="nav-link">Patient</a>
+		<a href="patientlogin.php" class="nav-link">Patient</a>
 	</li>
 ';
 
