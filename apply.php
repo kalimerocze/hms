@@ -19,7 +19,7 @@ $error['apply']="emter firstname";
 }else if(empty($surname)){
     $error['apply']="emter surname";
 
-}else if(empty($zsernam)){
+}else if(empty($username)){
     $error['apply']="emter username";
 
 }else if(empty($email)){
@@ -42,10 +42,10 @@ $error['apply']="emter firstname";
 
 }
 
-if(cpunt($error)==0){
+if(count($error)==0){
 
-$query = "INSERT INTO doctors ( firstname,surname,username,email,gender,phone,country,pasword,salary,data_reg,status,profile) VALUES ('$firstname','$surname','$username','$email','$gender','$phone','$country','$password','0',NOW(),'Pending','doctor.jpg')";
-$result = mysqli_query($connection,$query);
+$query = "INSERT INTO doctors (firstname,surname,username,email,gender,phone,country,password,salary,data_reg,status,profile) VALUES ('$firstname','$surname','$username','$email','$gender','$phone','$country','$password','0',now(),'Pending','doctor.jpg')";
+$result = mysqli_query($connect,$query);
 
 
 if($result){
@@ -68,9 +68,9 @@ header("Location:doctorlogin.php");
 }
 
 if(isset($error['apply'])){
-$s=$error['apply']
+$s=$error['apply'];
    
-$show="<h5 class='text-center alert alert-danger'>$s</h5>"
+$show="<h5 class='text-center alert alert-danger'>$s</h5>";
 }else{
 $show="";
 
@@ -80,7 +80,7 @@ $show="";
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Apply now</title>
+    <title>Žádost o účet</title>
 </head>
 <body style="background-image:url(img/back.jpg);background-size:cover;background-repeat:no-repeat;">
    <?php
@@ -92,7 +92,7 @@ $show="";
     <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6 my-3 jumbotron">
-        <h5 class="text-center">Apply now</h5>
+        <h5 class="text-center">Zažádat</h5>
 <div>
     <?php
     echo $show;
@@ -101,23 +101,23 @@ $show="";
 </div>
         <form method="post">
 <div class="form-group">
-    <label for="">firstname</label>
+    <label for="">Jméno</label>
     <input type="text" value="<?php if(isset($_POST['fname'])) echo $_POST['fname'];?>" name="fname" class="form-control" autocomplete="off"> placeholder="enter name"
 </div>
 <div class="form-group">
-    <label for="">surname</label>
+    <label for="">Přijmení</label>
     <input type="text" value="<?php if(isset($_POST['sname'])) echo $_POST['sname'];?>" name="sname" class="form-control" autocomplete="off"> placeholder="enter surname"
 </div>
 <div class="form-group">
-    <label for="">username</label>
+    <label for="">uživatelské jméno</label>
     <input type="text" name="uname" value="<?php if(isset($_POST['uname'])) echo $_POST['uname'];?>" class="form-control" autocomplete="off"> placeholder="enter name"
 </div>
 <div class="form-group">
-    <label for="">mail</label>
+    <label for="">E-mail</label>
     <input type="text" name="email" class="form-control" value="<?php if(isset($_POST['email'])) echo $_POST['email'];?>" autocomplete="off"> placeholder="enter name"
 </div>
 <div class="form-group">
-    <label for="">select gender</label>
+    <label for="">Pohlaví</label>
     <select name="gender" class="form-control">
         <option value="">Select gender</option>
         <option value="Male">Male</option>
@@ -125,29 +125,29 @@ $show="";
     </select>
 </div>
 <div class="form-group">
-    <label for="">phone</label>
-    <input type="number" name="phone" class="form-control" autocomplete="off"> placeholder="enter phone"
+    <label for="">Telefon</label>
+    <input type="number" name="phone" class="form-control" autocomplete="off" placeholder="Zadejte telefon"> 
 </div>
 <div class="form-group">
-    <label for="">select country</label>
+    <label for="">Země původu</label>
     <select name="country" class="form-control">
-        <option value="">Select country</option>
-        <option value="Russia">Russia</option>
+        <option value="">Zvolte zemi původu</option>
+        <option value="France">France</option>
         <option value="India">India</option>
         <option value="Ghana">Ghana</option>
     </select>
 </div>
 <div class="form-group">
-    <label for="">password</label>
-    <input type="password" name="pass" class="form-control" autocomplete="off"> placeholder="enter phone"
+    <label for="">Heslo</label>
+    <input type="password" name="pass" class="form-control" autocomplete="off"placeholder="Zadejte heslo"> 
 </div>
 <div class="form-group">
     <label for="">confirm password</label>
-    <input type="password" name="con_pass" class="form-control" autocomplete="off"> placeholder="enter phone"
+    <input type="password" name="con_pass" class="form-control" autocomplete="off"placeholder="Potvrdte heslo"> 
 </div>
 
 <input type="submit" name="apply" value="apply" clas="btn btn-success">
-<p> I already have an account <a href="doctorlogin.php">Click here</a></p>
+<p> Máte-li již účet<a href="doctorlogin.php">klikněte zde.</a></p>
         </form>
     </div>
     <div class="col-md-3"></div>

@@ -7,7 +7,7 @@ session_start();
 <html >
 <head>
 
-    <title>Admin Page</title>
+    <title>Admin stránka</title>
 </head>
 <body>
     <?php 
@@ -26,7 +26,7 @@ session_start();
         <div class="col-md-12">
         <div class="row">
         <div class="col-md-6">
-            <h5 class="text-center">All Admin</h5>
+            <h5 class="text-center">Všichni administrátoři</h5>
 
 <?php
 $ad = $_SESSION['admin'];
@@ -135,15 +135,15 @@ $error['u'] = "Enter Admin Username";
 
                 </div>
         <div class="form-group">
-            <label for="">Username</label>
+            <label for="">Uživatelské jméno</label>
             <input type="text" name="uname" class="form-control" autocomplete="off">
         </div>
         <div class="form-group">
-            <label for="">Password</label>
+            <label for="">Heslo</label>
             <input type="password" name="pass" class="form-control" autocomplete="off">
         </div>
         <div class="form-group">
-            <label for="">Add admin image</label>
+            <label for="">Přidat obrázek Admina</label>
             <input type="file" name="img" class="form-control" autocomplete="off">
         </div>
         <input type="submit" name="add" value="Add new admin" class="btn btn-success">

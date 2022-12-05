@@ -5,7 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Job requesr</title>
+    <title>Žádost o zaměstnání</title>
 </head>
 <body>
 <?php
@@ -23,7 +23,7 @@ include("sidenav.php")
 ?>
     </div>
     <div class="col-md-12">
-        <h5 class="text-center my">job request</h5>
+        <h5 class="text-center my">Žádost o zaměstnání</h5>
         <div id="show"></div>
     </div>
     </div>

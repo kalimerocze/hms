@@ -16,10 +16,10 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-info bg-info">
-<h5 class="text-white">Hospital mng system</h5>
+<h5 class="text-white">Nemocniční manažérský systém</h5>
 <div class="mr-auto"></div>
 
-<ul class´"">
+<ul class="">
 <?php
 
 if(isset($_SESSION['admin']))
@@ -64,16 +64,16 @@ echo '
 else{
 echo '
 <li class="nav-item">
-		<a href="index.php" class="nav-link">Home</a>
+		<a href="index.php" class="nav-link">Domů</a>
 	</li>
 	<li class="nav-item">
 		<a href="adminlogin.php" class="nav-link">Admin</a>
 	</li>
 	<li class="nav-item">
-		<a href="doctorlogin.php" class="nav-link">Doctor</a>
+		<a href="doctorlogin.php" class="nav-link">Doktor</a>
 	</li>
 	<li class="nav-item">
-		<a href="patientlogin.php" class="nav-link">Patient</a>
+		<a href="patientlogin.php" class="nav-link">Pacient</a>
 	</li>
 ';
 

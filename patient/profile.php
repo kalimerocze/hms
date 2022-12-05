@@ -7,7 +7,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Patient profile</title>
+    <title>Profil pacienta</title>
 </head>
 <body>
     
@@ -62,7 +62,7 @@ move_uploaded_file($_FILES['img']['tmp_name'],"img/$img");
 ?>
 
 
-        <h5> MyProfile</h5>
+        <h5> Můj profil</h5>
 <form method="POST" enctype="multipart/form-data">
    <?php
    echo " <img src='img/".$row['profile']."' class='col-md-12' style='height:250px;'>";
@@ -76,18 +76,18 @@ move_uploaded_file($_FILES['img']['tmp_name'],"img/$img");
 
 <table class="table table bordered">
     <tr>
-        <th colspan="2" class="text-center">My Details</th>
+        <th colspan="2" class="text-center">Detaily</th>
     </tr>
     <tr>
-        <td >Firstname</td>
+        <td >Jméno</td>
         <td ><?php echo $row['firstname']; ?></td>
     </tr>
     <tr>
-        <td >Suername</td>
+        <td >Přijmení</td>
         <td ><?php echo $row['surname']; ?></td>
     </tr>
     <tr>
-        <td >Username</td>
+        <td >Uživatelské jméno</td>
         <td ><?php echo $row['username']; ?></td>
     </tr>
     <tr>
@@ -95,22 +95,22 @@ move_uploaded_file($_FILES['img']['tmp_name'],"img/$img");
         <td ><?php echo $row['email']; ?></td>
     </tr>
     <tr>
-        <td >Phone</td>
+        <td >Telefon</td>
         <td ><?php echo $row['phone']; ?></td>
     </tr>
     <tr>
-        <td >gender</td>
+        <td >Pohlaví</td>
         <td ><?php echo $row['gender']; ?></td>
     </tr>
     <tr>
-        <td >Country</td>
+        <td >Země původu</td>
         <td ><?php echo $row['country']; ?></td>
     </tr>
     
 </table>
     </div>
     <div class="col-md-6">
-<h5 class="text center">Change Username</h5>
+<h5 class="text center">Změna uživatelského jména</h5>
 <?php
 
 if(isset($_POST['update'])){
@@ -137,7 +137,7 @@ $_SESSION['patient'] = $uname;
 
 ?>
 <form method="POST">
-    <label for="">Enter Username</label>
+    <label for="">Vložit uživatelské jméno</label>
     <input type="text" name="uname" class="form-control" autocomplete="off" placeholder="Enter username">
     <input type="submit" name="update" class="btn btn-info my-2" value="Update username">
 
@@ -182,18 +182,18 @@ mysqli_query($connect,$query);
 ?>
 
 
-<h5 class="my-4 text-center">Change Password</h5>
+<h5 class="my-4 text-center">Změnit heslo</h5>
 <form method="POST">
 
-<label for=""> Old password</label>
+<label for=""> /ůvodní heslo</label>
 <input type="password" name="pass" class="form-control"
  autocomplete="off" placeholder="enter old password">
 
- <label for=""> new password</label>
+ <label for=""> Nové heslo</label>
 <input type="password" name="new_pass" class="form-control"
  autocomplete="off" placeholder="enter new password">
 
- <label for=""> confirm password</label>
+ <label for=""> Potvrzovací nové heslo</label>
 <input type="password" name="con_pass" class="form-control"
  autocomplete="off" placeholder="enter confirmpassword">
 

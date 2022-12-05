@@ -7,10 +7,10 @@ $uname = $_POST['uname'];
 $password = $_POST['pass'];
 $error = array();
 
-$q = "SELECT * FROM doctors WHERE username='$uname' AND password = '$password'" 
-$qq = mysqli_query($connect,$q);
+$q = "SELECT * FROM doctors WHERE username='$uname' AND password = '$password'"; 
+$q = mysqli_query($connect,$q);
 
-$row=mysqli_fetch_array($qq);
+$row=mysqli_fetch_array($q);
 
 
 if(empty($uname)){
@@ -35,7 +35,7 @@ if(mysqli_num_rows($res)){
 
     echo "<script>alert('done')</script>";
     $_SESSION['doctor'] = $uname;
-    header("Location:doctor/index.php")
+    header("Location:doctor/index.php");
 }
 else{
     echo "<script>alert('Invalid account')</script>";
@@ -50,7 +50,7 @@ else{
 if(isset($error['login'])){
 
     $l= $error['login'];
-    $show = "<h5 class='text-center alert alert-danger'>$l  </h5>"
+    $show = "<h5 class='text-center alert alert-danger'>$l  </h5>";
 }else{
 
    $show = ""; 
@@ -63,7 +63,7 @@ if(isset($error['login'])){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
+    <title>Stránka přihlášení doktora</title>
 </head>
 <body style="background-image:url(back.jpg);background-size:cover;background-repeat:no-repeat;">
    <?php
@@ -74,23 +74,23 @@ if(isset($error['login'])){
    <div class="row">
    <div class="col-md-3"></div>
    <div class="col-md-6 jumbotron my-2">
-    <h5 class="text-center">doctors login</h5>
+    <h5 class="text-center">Přihlášení doktora</h5>
     <div> <?php
     echo $show;
     ?>
     </div>
     <form method="post">
     <div class="form-group">
-        <label for=""> username</label>
+        <label for=""> uživatelské jméno</label>
         <input type="text" name="uname" class="form-control" autocomplete="off" placeholder="enetr username">
     </div>
     <div class="form-group">
-        <label for=""> password</label>
+        <label for=""> heslo</label>
         <input type="password" name="pass" class="form-control" autocomplete="off" placeholder="enetr username">
     </div>
     <input type="submit" name="login" class="btn btn-success" value="login">
     
-<p> i dont have an account <a href="apply.php"> apply now</a></p>
+<p> Nemáte-li účet <a href="apply.php"> zažádejte zde.</a></p>
 </form>
    </div>
    <div class="col-md-3"></div>

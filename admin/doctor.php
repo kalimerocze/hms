@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Total doctors</title>
+    <title>Celkem doktorů</title>
 </head>
 <body>
 <?php
@@ -25,10 +25,10 @@ include("sidenav.php");
 ?>
 </div>
 <div class="col-md-10">
-    <h5 class="text-center">Total Doctors</h5>
+    <h5 class="text-center">Celkem doktorů</h5>
 <?php
 
-$query="SELECT * FRROM doctors WHERE  status = 'Approved' ORDER BY data_reg ASC ";
+$query="SELECT * FROM doctors WHERE  status = 'Approved' ORDER BY data_reg ASC ";
 $res = mysqli_query($connect,$query);
 
 $output = "";
@@ -50,9 +50,9 @@ $output .= "
 
 
 ";
-if(mysqli_num_rows($res)<1){
+if(mysqli_num_rows($res)< 1 ){
 
-    $out .="
+    $output .="
     <tr>
     <td colspan = '10' class='text-center'>No job request  yet.  <td>
     </tr>

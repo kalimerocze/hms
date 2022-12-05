@@ -31,7 +31,7 @@ else{
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>patient login page</title>
+    <title>Stránka přihlášení pacienta</title>
 </head>
 <body style="background-image:url(img/back.jpg);">
 <?php
@@ -42,23 +42,23 @@ include ("include/header.php");
 <div class="row">
 <div class="col-md-3"></div>
 <div class=" col-md-6 my-5 jumbotron">
-<h5 class="text-center my-3"> Patient login</h5>
+<h5 class="text-center my-3"> Přihlášení pacienta</h5>
 <form metho="POST">
     <div class="form-group">
-        <label for=""> username</label>
+        <label for=""> uživatelské jméno</label>
         <input type="text" name="uname" class="form-control" autocomplete="off" placeholder = "enter uname">
 
 
     </div>
     <div class="form-group">
-        <label for=""> passwor</label>
+        <label for=""> heslo</label>
         <input type="password" name="pass" 
         class="form-control" autocomplete="off" 
         placeholder = "enter pass">
     </div>
 <input type="submit" name="login" class="btn btn-info my-3" 
 value = "login">
-<p>I dont have an account <a href="account.php">Click here.</a></p>
+<p>Nemáte-li účet <a href="account.php">klikněte zde.</a></p>
 </form>
 </div>
 <div class="col-md-3"></div>

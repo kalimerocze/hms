@@ -5,7 +5,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Edit doctor</title>
+    <title>Upravit profil doktora</title>
 </head>
 <body>
     
@@ -27,7 +27,7 @@ include("sidenav.php");
 ?>
 </div>
 <div class="col-md-10">
-    <h5 class="text-center">Edito doctor</h5>
+    <h5 class="text-center">Upravit profil doktora</h5>
 
     <?php
     if(isse($_GET['id'])){
@@ -45,24 +45,24 @@ include("sidenav.php");
 
     <div class="row">
         <div class="col-md-8">
-            <h5 class="text-center"> doctor details </h5>
+            <h5 class="text-center"> Detaily lékaře </h5>
             <h5 class="my-3"> ID : <?php  echo $row['id']; ?></h5>
-            <h5 class="my-3"> Firstname : <?php  echo $row['firstname']; ?></h5>
-            <h5 class="my-3"> Surname : <?php  echo $row['surname']; ?></h5>
+            <h5 class="my-3"> Jméno : <?php  echo $row['firstname']; ?></h5>
+            <h5 class="my-3"> Přijmení : <?php  echo $row['surname']; ?></h5>
             <h5 class="my-3"> Email : <?php  echo $row['email']; ?></h5>
-            <h5 class="my-3"> Phone : <?php  echo $row['phone']; ?></h5>
-            <h5 class="my-3"> Gender : <?php  echo $row['gender']; ?></h5>
-            <h5 class="my-3"> Country : <?php  echo $row['country']; ?></h5>
-            <h5 class="my-3"> Date registere : <?php  echo $row['data_reg']; ?></h5>
-            <h5 class="my-3"> Salary : <?php  echo $row['salary']; ?></h5>
+            <h5 class="my-3"> Telefon : <?php  echo $row['phone']; ?></h5>
+            <h5 class="my-3"> Pohlaví : <?php  echo $row['gender']; ?></h5>
+            <h5 class="my-3"> Země původu : <?php  echo $row['country']; ?></h5>
+            <h5 class="my-3"> Datum registrace : <?php  echo $row['data_reg']; ?></h5>
+            <h5 class="my-3"> Plat : <?php  echo $row['salary']; ?></h5>
 <form method="POST">
-    <label for="">Enter Doctor's salary</label>
-    <input type="number" name="salary" class="form-control" autocomplete="off" value="<?php echo $row['salary'];?>" placeholder="enter salary">
-<input type="submit" name="update"  class="btn btn-info my-3" value="Update salary">
+    <label for="">Vložit plat doktora</label>
+    <input type="number" name="salary" class="form-control" autocomplete="off" value="<?php echo $row['salary'];?>" placeholder="Vložit plat doktora">
+<input type="submit" name="update"  class="btn btn-info my-3" value="Aktualizovat plat doktora">
 </form>
         </div>
  <div class="col-md-4">
-    <h5 class="text-center"> Update salary</h5>
+    <h5 class="text-center"> Aktualizovat plat</h5>
  </div>   </div>
 </div>
     </div>

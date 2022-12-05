@@ -6,19 +6,19 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Admin profile
+    <title>Profil administrátora
     </title>
 </head>
 <body>
     <?php
-include("../includer/header.php");
+include("../include/header.php");
 
 include("../include/connection.php");
-$ad ´$_SESSION['admin'];
+$ad =$_SESSION['admin'];
 $query = "SELECT *FROM admin WHERE username='$ad'";
 $res=mysqli_query($connect,$query);
 while($row = mysqli_fetch_array($res)){
-$username = $_row['username'];
+$username = $row['username'];
 $profiles = $row['profile'];
 
 
@@ -37,7 +37,7 @@ include("sidenav.php");
     <div class="col-md-10"><div class="col-md-12">
     <div class="row">
     <div class="col-md-6">
-        <h4><?php echo $username;?>Profile</h4>
+        <h4><?php echo $username;?>Profil</h4>
 
         <?php 
         if(isset($_POST['update'])){
@@ -59,7 +59,7 @@ if(empty($Profile)){
 <?php echo"<img src= 'img/$profiles'; class='col-md-12' style='height:200px;' alt=''>";   ?>
 <br><br>
 <div class=form-gtoup>
-    <label for="">UPDATE Profile</label>
+    <label for="">Aktualizovat profil</label>
     <input type="file" name="profile" class="form-control">
     <br>
     <input type="submit" name="update" value="UPDATE" class="btn btn-success">
@@ -83,9 +83,9 @@ if(empty($uname)){
         }
         ?>
 <form method="post">
-    <label for="">Change Username</label>
+    <label for="">Změnit uživatelské jméno</label>
     <input type="text" name="uname" class="form-control" autocomplete="off">
-    <input type="submit" name="change" class="btn btn-success" value="Change">
+    <input type="submit" name="change" class="btn btn-success" value="Změnit uživatelské jméno">
 </form>
 
 <br><br><br>
@@ -124,7 +124,7 @@ if(count($error)==0){
 
 }
 if(isset($error['p'])){
-    Łe = $error['p'];
+    $e = $error['p'];
     $show = "<h5 class='text-center alert alert-danger'> $e</h5>";
 }else{
 $show = "";
@@ -133,25 +133,25 @@ $show = "";
 ?>
 
 <form method="post">
-    <h5 class="text-center my-4">Change password</h5>
+    <h5 class="text-center my-4">Změnit heslo</h5>
     <div>
         <?php
         echo $show;
         ?>
     </div>
 <div class="form-group">
-    <label for="">Old password</label>
+    <label for="">Původní heslo</label>
     <input type="passwrod" name="old_pass" class="form-control">
 </div>
 <div class="form-group">
-    <label for="">new password</label>
+    <label for="">Nové heslo</label>
     <input type="password" name="new_pass" class="form-control">
 </div>
 <div class="form-group">
-    <label for=""> confirm passsword</label>
+    <label for=""> Nové potvrzovací heslo</label>
     <input type="passsword" name="con_pass" class="form-control">
 </div>
-<input type="submit" name="update_pass" value="update password" class="btn btn-info">
+<input type="submit" name="update_pass" value="Změnit heslo" class="btn btn-info">
 </form>
     </div>
     </div>

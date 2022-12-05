@@ -6,7 +6,7 @@ session_start();
 <html lang="en">
 <head>
     
-    <title>doctors dashboard</title>
+    <title>dashboard doktora</title>
 </head>
 <body>
     <?php

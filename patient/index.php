@@ -7,7 +7,7 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Patient dashboard</title>
+    <title>Dashboard pacienta</title>
 </head>
 <body>
     <?php 
@@ -24,7 +24,7 @@ include("../include/connection.php");
     ?>
     </div>
         <div class="col-md-10">
-            <h5 class="my-3">Patient dashboard</h5>
+            <h5 class="my-3">Dashboard pacienta</h5>
 
             <div class="col-md-12">
                 <div class="row">
@@ -32,7 +32,7 @@ include("../include/connection.php");
 <div class="col-md-12">
     <div class="row">
     <div class="col-md-8">
-<h5 class="text-white my-4">My Profile </h5>
+<h5 class="text-white my-4">Můj profil pacienta </h5>
 
     </div>
     <div class="col-md-4">
@@ -45,7 +45,7 @@ include("../include/connection.php");
                     <div class="col-md-12">
     <div class="row">
     <div class="col-md-8">
-<h5 class="text-white my-4">Book appointment </h5>
+<h5 class="text-white my-4">Zarezervovat schůzku s lékařem </h5>
 
     </div>
     <div class="col-md-4">
@@ -58,13 +58,13 @@ include("../include/connection.php");
 <div class="col-md-12">
     <div class="row">
     <div class="col-md-8">
-<h5 class="text-white my-4">My Invoice </h5>
+<h5 class="text-white my-4">Moje faktury </h5>
 
     </div>
     <div class="col-md-4">
         <a href="#"> <i class="fas fa-file-invoice-dollar fa-3x my-4 " style="color:white;"></i></a>
     </div>
-    </div>
+    </div>  
 </div>
 </div>
                 </div>
@@ -96,14 +96,14 @@ echo"<script>aalert('you have sent your report')</script>";
                 <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6 jumbotron bg-info my-5">
-                    <h5 class="text-center my-2">Send a report</h5>
+                    <h5 class="text-center my-2">Odeslat zprávu</h5>
 
                     <form method="POST">
 
-<label for="">Title</label>
+<label for="">Nadpis zprávy</label>
 <input type="text" name="title" autocomplete="off" class="form-control" placeholder="Enter Title">
 
-<label for="">Message</label>
+<label for="">Zpráva</label>
 <input type="text" name="message" autocomplete="off" class="form-control" placeholder="Enter message">
 
 <input type="submit" name="send" value="Send Report" class="btn btn-success my-2">

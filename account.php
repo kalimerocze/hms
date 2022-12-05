@@ -1,5 +1,5 @@
 <?php
-include("include/conncetion.php");
+include("include/connection.php");
 
 if(isset($_POST['create'])){
     $fname = $_POST['fname'];
@@ -15,46 +15,46 @@ if(isset($_POST['create'])){
 $error = array();
 
 if(empty($fname)){
-$error=['ac'] = "Enter firstname";
+$error['ac'] = "Enter firstname";
 
 }
 else if(empty($sname)){
-    $error=['ac'] = "Enter surname";
+    $error['ac'] = "Enter surname";
     
     }else if(empty($uname)){
-        $error=['ac'] = "Enter username";
+        $error['ac'] = "Enter username";
         
     }else if(empty($email)){
-        $error=['ac'] = "Enter email";
+        $error['ac'] = "Enter email";
         
         }else if(empty($phone)){
-            $error=['ac'] = "Enter phone";
+            $error['ac'] = "Enter phone";
             
             }
             else if(empty($gender)){
-                $error=['ac'] = "Enter gender";
+                $error['ac'] = "Enter gender";
                 
                 }else if(empty($country)){
-                    $error=['ac'] = "Enter country";
+                    $error['ac'] = "Enter country";
                     
                     }
-                    else if(empty($pass)){
-                        $error=['ac'] = "Enter password";
+                    else if(empty($password)){
+                        $error['ac'] = "Enter password";
                         
                         }
-                        else if($pass!= $con_pass){
-                            $error=['ac'] = "passwords are not equal";
+                        else if($password!= $con_pass){
+                            $error['ac'] = "passwords are not equal";
                             
                             }
                             else{
-
+                               
                                 
                             }
 
 
                             if(count($error)==0){
-
-                                $query="INSERT INTO patient(firstname,suername,username,email,phone,gender,country,password,date_reg,profile) VALUES('$fname','$sname','$uname','$email','$phone','$gender','$country','$password',NOW(),'patient.jpg') ";
+                               
+                                $query="INSERT INTO patient(firstname,surname,username,email,phone,gender,country,password,data_reg,profile) VALUES('$fname','$sname','$uname','$email','$phone','$gender','$country','$password',now(),'patient.jpg') ";
                                 $res = mysqli_query($connect,$query);
                                 if($res){
                                     header("Location:patientlogin");
@@ -63,6 +63,9 @@ else if(empty($sname)){
 echo"<script> alert('failed')</script>";
                                     
                                 }
+                            }else{
+                                echo"<script> alert('".$error['ac']."')</script>";
+                                
                             }
 
 
@@ -75,7 +78,7 @@ echo"<script> alert('failed')</script>";
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Create patient account</title>
+    <title>Vytvořit účet pacienta</title>
 </head>
 <body style="backgrnoud-image:url(img/backjpg); background-repeat:no-repeat">
     <?php
@@ -87,45 +90,45 @@ include("include/header.php");
 <div class="row">
 <div class="col-md-3"></div>
 <div class="col-md-6 my-2 jumbotron">
-    <h5 class="text-center text-info my-2">Create Account</h5>
+    <h5 class="text-center text-info my-2">Vytvoření účtu pacient22a</h5>
 <form method="POST">
 <div class="form-group">
-    <label for="">Firstname</label>
+    <label for="">jméno</label>
     <input type="text" name="fname" class="form-control" autocomplete="off"
     placeholder="enter firstname">
 </div>
 <div class="form-group">
-    <label for="">Surname</label>
+    <label for="">Přijmení</label>
     <input type="text" name="sname" class="form-control" autocomplete="off"
     placeholder="enter surname">
 </div>
 <div class="form-group">
-    <label for="">username</label>
+    <label for="">Uživatelské jméno</label>
     <input type="text" name="uname" class="form-control" autocomplete="off"
     placeholder="enter username">
 </div>
 <div class="form-group">
-    <label for="">Email</label>
+    <label for="">E-mail</label>
     <input type="text" name="email" class="form-control" autocomplete="off"
     placeholder="enter email">
 </div>
 <div class="form-group">
-    <label for="">Phone</label>
+    <label for="">Telefon</label>
     <input type="number" name="phone" class="form-control" autocomplete="off"
     placeholder="enter phone">
 </div>
 <div class="form-group">
-    <label for="">Gender</label>
+    <label for="">Pohlaví</label>
     <select name="gender" class="form-control">
-        <option value="">Select Gender</option>
+        <option value="">Zvolit pohlaví</option>
         <option value="Male">Male</option>
         <option value="Female">Female</option>
     </select>
 </div>
 <div class="form-group">
-    <label for="">Country</label>
-    <select name="gender" class="form-control">
-        <option value="">Select Gender</option>
+    <label for="">Země původu</label>
+    <select name="country" class="form-control">
+        <option value="">Zvolit zemi původu</option>
         <option value="France">France</option>
         <option value="Germany">Germany</option>
         <option value="England">England</option>
@@ -133,19 +136,19 @@ include("include/header.php");
     </select>
 </div>
 <div class="form-group">
-    <label for="">password</label>
+    <label for="">Heslo</label>
     <input type="password" name="pass" class="form-control" autocomplete="off"
     placeholder="enter password">
 </div>
 <div class="form-group">
-    <label for="">confirm password</label>
+    <label for="">Potvrzovací heslo</label>
     <input type="password" name="con_pass" class="form-control" autocomplete="off"
     placeholder="enter confirm password">
 </div>
 <input type="submit" name="create" value="Create account"
 class="btn btn-info">
 
-<p> i Already have an account<a hre="patientlogin.php">Click Here. </a></p>
+<p> Máte-li již účet<a href="patientlogin.php">klikněte zde. </a></p>
 </form>
 </div>
 <div class="col-md-3"></div>
