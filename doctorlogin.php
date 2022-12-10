@@ -15,16 +15,16 @@ $row=mysqli_fetch_array($q);
 
 if(empty($uname)){
 
-    $error['login']="enter username";
+    $error['login']="Vložte uživatelské jméno";
 }else if(empty($password)){
-    $error['login']="enetr password";
+    $error['login']="Vložte heslo";
 
 
 }else if($row['status']=='Pending'){
-    $error['login']="pleasewait for admin to confirm your account password";
+    $error['login']="Prosím vyčkejte na schválení účtu administrátorem webu.";
 
 }else if($row['status']=='Rejected'){
-    $error['login']="Your request was rejected";
+    $error['login']="Vaše žádost byla zamítnuta";
 
 }
 if(count($error)==0){
@@ -38,7 +38,7 @@ if(mysqli_num_rows($res)){
     header("Location:doctor/index.php");
 }
 else{
-    echo "<script>alert('Invalid account')</script>";
+    echo "<script>alert('Neplatný účet')</script>";
 
 
 }
@@ -82,11 +82,11 @@ if(isset($error['login'])){
     <form method="post">
     <div class="form-group">
         <label for=""> uživatelské jméno</label>
-        <input type="text" name="uname" class="form-control" autocomplete="off" placeholder="enetr username">
+        <input type="text" name="uname" class="form-control" autocomplete="off" placeholder="Vložte uživatelské jméno">
     </div>
     <div class="form-group">
         <label for=""> heslo</label>
-        <input type="password" name="pass" class="form-control" autocomplete="off" placeholder="enetr username">
+        <input type="password" name="pass" class="form-control" autocomplete="off" placeholder="Vložte heslo">
     </div>
     <input type="submit" name="login" class="btn btn-success" value="login">
     

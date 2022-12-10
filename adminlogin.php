@@ -78,7 +78,7 @@ echo $show;
 				</div>
 				<div class="form-group">
 					<label>Heslo</label>
-					<input type="password" name="pass" class="form.-control">
+					<input type="password" name="pass" class="form-control">
 				</div>
 				<input type="submit" name="login" class="btn btn-success" value="Přihlásit">
 			</form>

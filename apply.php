@@ -102,24 +102,24 @@ $show="";
         <form method="post">
 <div class="form-group">
     <label for="">Jméno</label>
-    <input type="text" value="<?php if(isset($_POST['fname'])) echo $_POST['fname'];?>" name="fname" class="form-control" autocomplete="off"> placeholder="enter name"
+    <input type="text" value="<?php if(isset($_POST['fname'])) echo $_POST['fname'];?>" name="fname" class="form-control" autocomplete="off"placeholder="Vložte jméno"> 
 </div>
 <div class="form-group">
     <label for="">Přijmení</label>
-    <input type="text" value="<?php if(isset($_POST['sname'])) echo $_POST['sname'];?>" name="sname" class="form-control" autocomplete="off"> placeholder="enter surname"
+    <input type="text" value="<?php if(isset($_POST['sname'])) echo $_POST['sname'];?>" name="sname" class="form-control" autocomplete="off"placeholder="Vložte příjmení"> 
 </div>
 <div class="form-group">
     <label for="">uživatelské jméno</label>
-    <input type="text" name="uname" value="<?php if(isset($_POST['uname'])) echo $_POST['uname'];?>" class="form-control" autocomplete="off"> placeholder="enter name"
+    <input type="text" name="uname" value="<?php if(isset($_POST['uname'])) echo $_POST['uname'];?>" class="form-control" autocomplete="off"placeholder="Vložte uživatelské jméno name"> 
 </div>
 <div class="form-group">
     <label for="">E-mail</label>
-    <input type="text" name="email" class="form-control" value="<?php if(isset($_POST['email'])) echo $_POST['email'];?>" autocomplete="off"> placeholder="enter name"
+    <input type="text" name="email" class="form-control" value="<?php if(isset($_POST['email'])) echo $_POST['email'];?>" autocomplete="off"placeholder="Vložte e-mail"> 
 </div>
 <div class="form-group">
     <label for="">Pohlaví</label>
     <select name="gender" class="form-control">
-        <option value="">Select gender</option>
+        <option value="">Zvolit pohlaví</option>
         <option value="Male">Male</option>
         <option value="Female">Female</option>
     </select>
@@ -142,7 +142,7 @@ $show="";
     <input type="password" name="pass" class="form-control" autocomplete="off"placeholder="Zadejte heslo"> 
 </div>
 <div class="form-group">
-    <label for="">confirm password</label>
+    <label for="">Potvrzovací heslo</label>
     <input type="password" name="con_pass" class="form-control" autocomplete="off"placeholder="Potvrdte heslo"> 
 </div>
 

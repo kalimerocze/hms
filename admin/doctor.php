@@ -34,7 +34,7 @@ $res = mysqli_query($connect,$query);
 $output = "";
 
 $output .= "
-<table class='table table bordered'>
+<table class='table table-bordered'>
 <tr>
 <th> ID </th>
 <th> Firstname </th>
@@ -54,7 +54,7 @@ if(mysqli_num_rows($res)< 1 ){
 
     $output .="
     <tr>
-    <td colspan = '10' class='text-center'>No job request  yet.  <td>
+    <td colspan = '10' class='text-center'>No job request  yet.  </td>
     </tr>
     ";
 }
@@ -62,23 +62,23 @@ if(mysqli_num_rows($res)< 1 ){
 
 
 while($row = mysqli_fetch_array($res)){
-    $output = "
+    $output .= "
     <tr>
-    <td>" .$row['id'].  "<td>
-    <td>" .$row['firstname'].  "<td>
-    <td>" .$row['surname'].  "<td>
-    <td>" .$row['username'].  "<td>
-    <td>" .$row['gender'].  "<td>
-    <td>" .$row['phone'].  "<td>
-    <td>" .$row['country'].  "<td>
-    <td>" .$row['salary'].  "<td>
-    <td>" .$row['data_reg'].  "<td>
+    <td>" .$row['Id'].  "</td>
+    <td>" .$row['firstname'].  "</td>
+    <td>" .$row['surname'].  "</td>
+    <td>" .$row['username'].  "</td>
+    <td>" .$row['gender'].  "</td>
+    <td>" .$row['phone'].  "</td>
+    <td>" .$row['country'].  "</td>
+    <td>" .$row['salary'].  "</td>
+    <td>" .$row['data_reg'].  "</td>
     <td>
-   <a href='edit.php?".$row['id']."'> 
+   <a href='edit.php?".$row['Id']."'> 
    <button class='btn btn-info'>Edit </button>
    </a>
-    <td>
-    </tr>
+    </td>
+    
     ";
 
 
