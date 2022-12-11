@@ -40,7 +40,16 @@ include("sidenav.php");
 
 
     }
-    
+    if(isset($_POST['update'])){
+
+        $salary = $_POST['salary'];
+        $query1 ="UPDATE doctors SET salary='$salary' WHERE Id='$id'";
+        $res1 = mysqli_query($connect,$query1);
+
+      
+
+
+    }
     ?>
 
     <div class="row">

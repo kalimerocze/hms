@@ -49,7 +49,7 @@ if(empty($img)){
     $query = "UPDATE doctors SET profile ='$img' WHERE username='$doc'";
     $res = mysqli_query($connect,$query);
     if($res){
-        move_uploaded_file($_FILES['img']['tmp_name'],"img/$img");
+        move_uploaded_file($_FILES['img']['tmp_name'],"img/".$img);
 
     }
 }
@@ -59,8 +59,7 @@ if(empty($img)){
 ?>
 <form method="POST" enctype = "multipart/form-data">
 <?php
-echo "    <img src='img".$row['profile']."' style='height:250px;' class='col-md-12 my-3' alt=''>
-";
+echo "<img src='img/".$row['profile']."' style='height:250px;' class='col-md-12 my-3' alt=''>";
 ?>
 <input type="file" name="img" class="form-control my-1">
 <input type="submit" name="upload" class="btn btn-success" value="upload image">

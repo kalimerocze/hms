@@ -37,34 +37,48 @@ include("sidenav.php");
     <div class="col-md-10"><div class="col-md-12">
     <div class="row">
     <div class="col-md-6">
-        <h4><?php echo $username;?>Profil</h4>
+        <h4><?php echo $username;?> Profil</h4>
 
         <?php 
         if(isset($_POST['update'])){
-$profile= $_FILES['profile']['name'];
-if(empty($Profile)){
-
-}else{
-    $query = "UPDATE admin SET profile = '$profile' WHERE username='$ad'";
-    $result = mysqli_query($connect,$query);
-    if($result){
-        move_uploaded_file($_FILES['profile']['emp_name'],"img/$profile");
-    }
-}
-
+            $profile= $_FILES['profile']['name'];
+         
+            try {
+            if(empty($profile)){
+              
+            }else {
+               $query = "UPDATE admin SET profile='$profile' WHERE username='$ad'";
+                $result = mysqli_query($connect,$query);
+                if($result){
+                   
+                    move_uploaded_file($_FILES['profile']['tmp_name'],"img/".$profile);
+                 
+                  
+            
+                
+                }
+            }
+        }catch (customException $e) {
+            //display custom message
+            echo $e->errorMessage();
+          }
+      
         }
         ?>
 
-        <form method="post" enctype="multipart/form-data">
-<?php echo"<img src= 'img/$profiles'; class='col-md-12' style='height:200px;' alt=''>";   ?>
-<br><br>
-<div class=form-gtoup>
-    <label for="">Aktualizovat profil</label>
-    <input type="file" name="profile" class="form-control">
-    <br>
-    <input type="submit" name="update" value="UPDATE" class="btn btn-success">
-</div> 
-</form>    </div>
+
+
+        <form method="post" enctype="multipart/form-data" >
+            <?php echo"<img src= 'img/$profiles'; class='col-md-12' style='height:200px;' alt=''>";   ?>
+            <br><br>
+            <div class=form-gtoup>
+                 <label for="">Aktualizovat profil</label>
+                    <input type="file" name="profile" id="profile" class="form-control">
+                 <br>
+                 <input type="submit" name="update" value="UPDATE" class="btn btn-success">
+            </div> 
+        </form>  
+  </div>
     <div class="col-md-6">
         <?php
         if(isset($_POST['change'])){
@@ -101,38 +115,41 @@ if(isset($_POST['update_pass'])){
     $row = mysqli_fetch_array($old);
     $pass= $row['password'];
     //old input password
-    if($empty($old_pass)){
-        $error['p']="enter old password";
+    if(empty($old_pass)){
+        $error['p']="Nebylo zadáno původní heslo. Vložte původní heslo, prosím";
     //empty new password
     }else if(empty($new_pass)){
-        $error['p']="enter new password";
+        $error['p']="Nebylo zadáno nové heslo. Vložte nové heslo, prosím";
     }
     //empty confirm input password
     else if(empty($con_pass)){
-        $error['p']="enter congirmation password";
+        $error['p']="Nebylo zadáno potvrzovací nové heslo. Vložte potvrzovací heslo znovu, prosím";
     //input old and new isnt same
     }else if($old_pass!=$pass){
-        $error['p'] ="Invalid old password"; 
+        $error['p'] ="Neplatné původní heslo."; 
         //input new and con password isnt same
     }else if($new_pass!=$con_pass){
-        $error['p'] ="both password does not match";  
+        $error['p'] ="Vámi nově zvolené heslo a potvrzovací heslo se neshodují.";  
     }
 
     if(count($error)==0){
 
         $query = "UPDATE admin SET password = '$new_pass' WHERE username='$ad'";
         mysqli_query($connect,$query);
-
+$success = "<h5 class='text-center alert alert-success'> Heslo bylo změněno na - ".$new_pass."</h5>";
     }
 
 
 }
 if(isset($error['p'])){
     $e = $error['p'];
-    $show = "<h5 class='text-center alert alert-danger'> ".$e."</h5>";
-}else{
-    $show = "";
+    $show = "<h5 class='text-center alert alert-danger'> Došlo k chybě: ".$e."</h5>";
+}else if(isset($success)){
+    $show = $success;
 
+}
+else{
+    $show="";
 }
 ?>
 
@@ -142,6 +159,7 @@ if(isset($error['p'])){
         <?php
         echo $show;
         ?>
+       
     </div>
 <div class="form-group">
     <label for="">Původní heslo</label>
