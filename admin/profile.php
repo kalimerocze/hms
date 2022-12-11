@@ -97,37 +97,41 @@ if(isset($_POST['update_pass'])){
     $con_pass = $_POST['con_pass'];
 
     $error = array();
-$old = mysqli_query($connect,"SELECT * FROM admin WHERE username = '$ad'");
-$row = mysqli_fetch_array($old);
-$pass= $row['password'];
+    $old = mysqli_query($connect,"SELECT * FROM admin WHERE username = '$ad'");
+    $row = mysqli_fetch_array($old);
+    $pass= $row['password'];
+    //old input password
     if($empty($old_pass)){
-$error['p']="enter old password";
-
+        $error['p']="enter old password";
+    //empty new password
     }else if(empty($new_pass)){
         $error['p']="enter new password";
     }
+    //empty confirm input password
     else if(empty($con_pass)){
         $error['p']="enter congirmation password";
+    //input old and new isnt same
     }else if($old_pass!=$pass){
         $error['p'] ="Invalid old password"; 
+        //input new and con password isnt same
     }else if($new_pass!=$con_pass){
         $error['p'] ="both password does not match";  
     }
 
-if(count($error)==0){
+    if(count($error)==0){
 
-    $query = "UPDATE admin SET password = '$new_pass' WHERE username='$ad'";
-    mysqli_query($connect,$query);
+        $query = "UPDATE admin SET password = '$new_pass' WHERE username='$ad'";
+        mysqli_query($connect,$query);
 
-}
+    }
 
 
 }
 if(isset($error['p'])){
     $e = $error['p'];
-    $show = "<h5 class='text-center alert alert-danger'> $e</h5>";
+    $show = "<h5 class='text-center alert alert-danger'> ".$e."</h5>";
 }else{
-$show = "";
+    $show = "";
 
 }
 ?>
@@ -141,7 +145,7 @@ $show = "";
     </div>
 <div class="form-group">
     <label for="">Původní heslo</label>
-    <input type="passwrod" name="old_pass" class="form-control">
+    <input type="password" name="old_pass" class="form-control">
 </div>
 <div class="form-group">
     <label for="">Nové heslo</label>

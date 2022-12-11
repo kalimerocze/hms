@@ -160,7 +160,7 @@ $_SESSION['doctor'] = $uname;
 
         $ol = "SELECT * FROM doctors where username = '$doc'";
 
-        $ols = mysqli_query($connect,$ol);
+        $ol = mysqli_query($connect,$ol);
         $row = mysqli_fetch_array($ols);
 
 if($old!=$row['password']){
@@ -168,12 +168,13 @@ if($old!=$row['password']){
 }else if(empty($new)){
 
 
-    }
+    
+
 }else if($con != $new){
 
 
 }else{
-$qeury = "UPDATE doctors SET password = '$new' WHERE username='$doc'";
+$query = "UPDATE doctors SET password = '$new' WHERE username='$doc'";
 mysqli_query($connect,$query);
 
 }
@@ -192,7 +193,7 @@ mysqli_query($connect,$query);
         <div class="form-group">
 
 <label for=""> new password</label>
-<input type="password" name="newd_pass" class="form-control" 
+<input type="password" name="new_pass" class="form-control" 
 autocomplete="off" placeholder="enter old password">
 <br>
 </div>

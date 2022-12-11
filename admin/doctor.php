@@ -74,7 +74,7 @@ while($row = mysqli_fetch_array($res)){
     <td>" .$row['salary'].  "</td>
     <td>" .$row['data_reg'].  "</td>
     <td>
-   <a href='edit.php?".$row['Id']."'> 
+   <a href='edit.php?Id=".$row['Id']."'> 
    <button class='btn btn-info'>Edit </button>
    </a>
     </td>
