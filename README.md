@@ -1,10 +1,10 @@
 # Hospital management system
 
-## backend:
+## Backend part of the app:
 - using php
 - MySql
 
-## frontend:
+## Frontend part of the app:
 
 - Bootstrap 5
 
