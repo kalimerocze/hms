@@ -8,9 +8,9 @@
 
 - Bootstrap 5
 
-For running this app first you must create database hms and tables in MySql database.
-Application is divided into three section: patient, doctor and admin.
-Admin can confirm doctors status.
+For running this app first you must create database hms and tables in MySql database.<br />
+Application is divided into three section: patient, doctor and admin.<br />
+Admin can confirm doctors status.<br />
 Report is for sending message to doctors from patients
 ### Tables:
 
