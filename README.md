@@ -1,7 +1,7 @@
 # Hospital management system
 
 ## Backend part of the app:
-- using php
+- using PHP
 - MySql
 
 ## Frontend part of the app:
