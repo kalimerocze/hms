@@ -1,12 +1,18 @@
 # Hospital management system
-
-## Backend part of the app:
+- Webová aplikace umožňující správu pacientů a lékařů.
+- Uživatel může vytvářet, upravovat a mazat záznamy.
+- Projekt slouží jako trénink PHP a MySQL.
+  
+## Back-end:
 - using PHP
 - MySql
 
-## Frontend part of the app:
-
+## Front-end:
 - Bootstrap 5
+## Funkce
+- Registrace a správa záznamů
+- REST API
+- Validace formulářů
 
 For running this app first you must create database hms and tables in MySql database.<br/>
 Application is divided into three section: patient, doctor and admin.<br/>
